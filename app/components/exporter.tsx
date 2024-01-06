@@ -538,17 +538,15 @@ export function ImagePreviewer(props: {
           </div>
 
           <div>
-            <div className={styles["main-title"]}>NextChat</div>
+            <div className={styles["main-title"]}>ChatWeb</div>
             <div className={styles["sub-title"]}>
-              github.com/Yidadaa/ChatGPT-Next-Web
+              <br />
+              <strong>Website : {window.location.hostname}</strong>
+              <br />
+              <strong>Present Time: {new Date().toLocaleString()}</strong>
+              <br />
+              <strong>Powered with ❤️ by HappyAI</strong>
             </div>
-            <div className={styles["icons"]}>
-              <ExportAvatar avatar={config.avatar} />
-              <span className={styles["icon-space"]}>&</span>
-              <ExportAvatar avatar={mask.avatar} />
-            </div>
-          </div>
-          <div>
             <div className={styles["chat-info-item"]}>
               {Locale.Exporter.Model}: {mask.modelConfig.model}
             </div>
@@ -581,6 +579,7 @@ export function ImagePreviewer(props: {
               <div className={styles["body"]}>
                 <Markdown
                   content={m.content}
+                  imageBase64={m.image_url}
                   fontSize={config.fontSize}
                   defaultShow
                 />
